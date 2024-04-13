@@ -7,4 +7,5 @@ Ciencias de la Computación - FCEN - UBA\
 
 - Prácticas
 
-  - [Práctica 1](prácticas/p01)
+  - [Práctica 1](prácticas/p01): Lenguajes
+  - [Práctica 2](prácticas/p02): Autómatas finitos
