@@ -9,3 +9,4 @@ Ciencias de la Computación - FCEN - UBA\
 
   - [Práctica 1](prácticas/p01): Lenguajes
   - [Práctica 2](prácticas/p02): Autómatas finitos
+  - [Práctica 3](prácticas/p03): Lema de pumping para lenguajes regulares
