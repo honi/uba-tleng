@@ -1,0 +1,25 @@
+digraph p2_ej2_e_min {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono", width=0.5]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; d f g
+	node [shape=circle]
+	start [label="", shape=none, width=0, height=0]
+	start -> a
+	a -> b [label="0"]
+	a -> a [label="1"]
+	b -> c [label="0"]
+	b -> a [label="1"]
+	c -> d [label="0"]
+	c -> a [label="1"]
+	d -> e [label="0"]
+	d -> f [label="1"]
+	e -> e [label="0"]
+	e -> e [label="1"]
+	f -> g [label="0"]
+	f -> f [label="1"]
+	g -> d [label="0"]
+	g -> f [label="1"]
+}
