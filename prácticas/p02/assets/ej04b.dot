@@ -1,0 +1,15 @@
+digraph ej04b {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono", width=0.5]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; F
+	node [shape=circle]
+	M [shape=square]
+	start [label="", shape=none, width=0, height=0]
+	start -> I
+	I -> M [label="λ"]
+	M -> F [label="λ"]
+	F -> I [label="λ", constraint=false]
+}
