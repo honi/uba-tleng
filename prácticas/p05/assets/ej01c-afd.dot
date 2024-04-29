@@ -4,7 +4,7 @@ digraph ej01c_afd {
 	fontname="Ubuntu Mono"
 	node [fontname="Ubuntu Mono"]
 	edge [fontname="Ubuntu Mono"]
-	node [shape=doublecircle]; "{q,s}" "{q}" "{p,q,r}" "{q,r}" "{s}" "{q,r,s}"
+	node [shape=doublecircle]; "{q,s}" "{q}" "{p,q,r}" "{q,r}" "{s}" "{q,r,s}" "{r,s}"
 	node [shape=circle]
 	start [label="", shape=none, width=0, height=0]
 	start -> "{p}"
