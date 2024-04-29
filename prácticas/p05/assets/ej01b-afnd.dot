@@ -1,0 +1,22 @@
+digraph ej01b_afnd {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono", width=0.5]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; 6
+	node [shape=circle]
+	start [label="", shape=none, width=0, height=0]
+	start -> 0
+	0 -> 1 [label="a"]
+	0 -> 2 [label="b"]
+	0 -> 4 [label="λ"]
+	1 -> 0 [label="λ", constraint=false]
+	1 -> 3 [label="λ"]
+	2 -> 0 [label="λ"]
+	2 -> 3 [label="λ"]
+	3 -> 4 [label="a"]
+	4 -> 5 [label="λ"]
+	5 -> 6 [label="a,b"]
+	6 -> 5 [label="λ", constraint=false]
+}

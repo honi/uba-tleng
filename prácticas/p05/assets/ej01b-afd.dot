@@ -1,0 +1,17 @@
+digraph ej01b_afd {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono", width=0.5]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; B C
+	node [shape=circle]
+	start [label="", shape=none, width=0, height=0]
+	start -> A
+	A -> B [label="a"]
+	A -> C [label="b"]
+	B -> B [label="a"]
+	B -> C [label="b"]
+	C -> B [label="a", constraint=false]
+	C -> C [label="b"]
+}

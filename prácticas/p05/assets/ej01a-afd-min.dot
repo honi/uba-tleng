@@ -1,0 +1,22 @@
+digraph ej01a_afd_min {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono", width=0.5]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; D
+	node [shape=circle]
+	A [fontcolor="#D356E2"]
+	B [fontcolor="#44C377"]
+	C [fontcolor="#FC2A1B"]
+	D [fontcolor="#1643EC"]
+	start [label="", shape=none, width=0, height=0]
+	start -> A
+	A -> B [label="a"]
+	A -> A [label="b"]
+	B -> C [label="a"]
+	B -> A [label="b", constraint=false]
+	C -> D [label="a"]
+	C -> A [label="b", constraint=false]
+	D -> D [label="a,b"]
+}

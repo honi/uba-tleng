@@ -1,0 +1,15 @@
+digraph ej01b_afd_min {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono", width=0.5]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; △
+	node [shape=circle]
+	□ [fontcolor="#D356E2"]
+	△ [fontcolor="#1643EC"]
+	start [label="", shape=none, width=0, height=0]
+	start -> □
+	□ -> △ [label="a,b"]
+	△ -> △ [label="a,b"]
+}

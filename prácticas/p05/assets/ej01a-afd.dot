@@ -1,0 +1,23 @@
+digraph ej01a_afd {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono", width=1]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; "{0,1,2,3}" "{0,3}" "{0,1,3}"
+	node [shape=circle]
+	start [label="", shape=none, width=0, height=0]
+	start -> "{0}"
+	"{0}" -> "{0,1}" [label="a"]
+	"{0}" -> "{0}" [label="b"]
+	"{0,1}" -> "{0,1,2}" [label="a"]
+	"{0,1}" -> "{0}" [label="b", constraint=false]
+	"{0,1,2}" -> "{0,1,2,3}" [label="a"]
+	"{0,1,2}" -> "{0}" [label="b", constraint=false]
+	"{0,1,2,3}" -> "{0,1,2,3}" [label="a"]
+	"{0,1,2,3}" -> "{0,3}" [label="b"]
+	"{0,3}" -> "{0,1,3}" [label="a"]
+	"{0,3}" -> "{0,3}" [label="b"]
+	"{0,1,3}" -> "{0,1,2,3}" [label="a", constraint=false]
+	"{0,1,3}" -> "{0,3}" [label="b", constraint=false]
+}

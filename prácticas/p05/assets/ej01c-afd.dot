@@ -1,0 +1,30 @@
+digraph ej01c_afd {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono"]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; "{q,s}" "{q}" "{p,q,r}" "{q,r}" "{s}" "{q,r,s}"
+	node [shape=circle]
+	start [label="", shape=none, width=0, height=0]
+	start -> "{p}"
+	"{p}" -> "{q,s}" [label="0"]
+	"{p}" -> "{q}" [label="1"]
+	"{q,s}" -> "{r}" [label="0", constraint=false]
+	"{q,s}" -> "{p,q,r}" [label="1", constraint=false]
+	"{q}" -> "{r}" [label="0"]
+	"{q}" -> "{q,r}" [label="1"]
+	"{r}" -> "{s}" [label="0"]
+	"{r}" -> "{p}" [label="1"]
+	"{p,q,r}" -> "{q,r,s}" [label="0", constraint=false]
+	"{p,q,r}" -> "{p,q,r}" [label="1", constraint=false]
+	"{q,r}" -> "{r,s}" [label="0"]
+	"{q,r}" -> "{p,q,r}" [label="1"]
+	"{s}" -> T [label="0"]
+	"{s}" -> "{p}" [label="1"]
+	"{q,r,s}" -> "{r,s}" [label="0"]
+	"{q,r,s}" -> "{p,q,r}" [label="1"]
+	"{r,s}" -> "{s}" [label="0"]
+	"{r,s}" -> "{p}" [label="1"]
+	"T" -> "T" [label="0,1"]
+}
