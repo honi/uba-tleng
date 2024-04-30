@@ -1,0 +1,21 @@
+digraph ej03 {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono", width=0.5]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; "(q2,p0)"
+	node [shape=circle]
+	start [label="", shape=none, width=0, height=0]
+	start -> "(q0,p0)"
+	"(q0,p0)" -> "(q1,p1)" [label="0"]
+	"(q0,p0)" -> "(q0,p0)" [label="1"]
+	"(q1,p0)" -> "(q1,p1)" [label="0"]
+	"(q1,p0)" -> "(q2,p0)" [label="1"]
+	"(q1,p1)" -> "(q1,p0)" [label="0"]
+	"(q1,p1)" -> "(q2,p1)" [label="1"]
+	"(q2,p0)" -> "(q2,p1)" [label="0"]
+	"(q2,p0)" -> "(q2,p0)" [label="1"]
+	"(q2,p1)" -> "(q2,p0)" [label="0"]
+	"(q2,p1)" -> "(q2,p1)" [label="1"]
+}
