@@ -1,0 +1,18 @@
+digraph ej04_m2 {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono", width=0.5]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; q3
+	node [shape=circle]
+	start [label="", shape=none, width=0, height=0]
+	start -> q0
+	q0 -> q0 [label="a"]
+	q0 -> q1 [label="b"]
+	q1 -> q0 [label="a", constraint=false]
+	q1 -> q2 [label="b"]
+	q2 -> q3 [label="a"]
+	q2 -> q2 [label="b"]
+	q3 -> q3 [label="a,b"]
+}

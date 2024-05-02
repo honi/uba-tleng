@@ -1,0 +1,22 @@
+digraph ej04_m4 {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono", width=0.5]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; E F
+	node [shape=circle]
+	start [label="", shape=none, width=0, height=0]
+	start -> A
+	A -> B [label="a"]
+	A -> C [label="b"]
+	B -> D [label="a"]
+	B -> C [label="b"]
+	C -> E [label="a"]
+	C -> D [label="b"]
+	D -> D [label="a,b"]
+	E -> D [label="a"]
+	E -> F [label="b"]
+	F -> E [label="a", constraint=false]
+	F -> D [label="b", constraint=false]
+}
