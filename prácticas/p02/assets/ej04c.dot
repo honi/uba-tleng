@@ -4,11 +4,11 @@ digraph ej04c {
 	fontname="Ubuntu Mono"
 	node [fontname="Ubuntu Mono", width=0.5]
 	edge [fontname="Ubuntu Mono"]
-	node [shape=doublecircle]; F
+	node [shape=doublecircle]; qF
 	node [shape=circle]
 	M [shape=square]
 	start [label="", shape=none, width=0, height=0]
-	start -> I
-	I -> M [label="λ"]
-	M -> F [label="λ"]
+	start -> qI
+	qI -> M [label="λ"]
+	M -> qF [label="λ"]
 }
