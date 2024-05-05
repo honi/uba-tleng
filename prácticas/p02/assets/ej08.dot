@@ -1,0 +1,39 @@
+digraph ej08 {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono", width=0.5]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; q0 bP1 aI1 bI2 aP2
+	node [shape=circle]
+
+	bP1 [label="bP"]
+	bI1 [label="bI"]
+	aP1 [label="aP"]
+	aI1 [label="aI"]
+
+	bP2 [label="bP"]
+	bI2 [label="bI"]
+	aP2 [label="aP"]
+	aI2 [label="aI"]
+
+	start [label="", shape=none, width=0, height=0]
+	start -> q0
+
+	q0 -> bP1 [label="λ"]
+	q0 -> aP2 [label="λ"]
+
+	bP1 -> bI1 [label="b"]
+	bI1 -> bP1 [label="b"]
+	bP1 -> aI1 [label="a"]
+	aI1 -> aP1 [label="a"]
+	aP1 -> aI1 [label="a"]
+	aI1 -> bI1 [label="b"]
+
+	bI2 -> bP2 [label="b"]
+	bP2 -> bI2 [label="b"]
+	bI2 -> aI2 [label="a"]
+	aI2 -> aP2 [label="a"]
+	aP2 -> aI2 [label="a"]
+	aP2 -> bI2 [label="b"]
+}
