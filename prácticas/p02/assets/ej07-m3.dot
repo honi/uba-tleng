@@ -1,0 +1,15 @@
+digraph ej07_m3 {
+	dpi=300
+    rankdir=LR
+	fontname="Ubuntu Mono"
+	node [fontname="Ubuntu Mono", width=0.5]
+	edge [fontname="Ubuntu Mono"]
+	node [shape=doublecircle]; r0
+	node [shape=circle]
+	start [label="", shape=none, width=0, height=0]
+	start -> r0
+	r0 -> r0 [label="a,b"]
+	r0 -> r1 [label="c"]
+	r1 -> r0 [label="a,b"]
+	r1 -> r1 [label="c"]
+}
