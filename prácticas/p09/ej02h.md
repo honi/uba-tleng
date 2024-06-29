@@ -12,6 +12,8 @@ La gramática es ambigua porque al consumir una `a` no sabemos si es la `a` del 
 Para desambiguar podemos modificar las producciones e introducir otro no terminal `T` que produce el resto de los símbolos que vienen luego de consumir una `a`: o bien `aSbb` o bien `λ` en el caso donde es la `a` del medio de la cadena.
 
 ```
+G8 = ⟨{S,T}, {a,b}, P8, S⟩
+
 P8:
 S → aT | λ
 T → aSbb | λ
