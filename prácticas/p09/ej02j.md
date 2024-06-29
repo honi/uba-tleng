@@ -134,8 +134,8 @@ Prim(R) = Prim(aR) = {a}
 ```
 Sig(S) = {$}
 Sig(T) = Sig(S) ∪ Sig(T) = {$}
-Sig(A) = Prim(T) = {b}
-Sig(R) = Sig(A) ∪ Sig(R) = {b}
+Sig(A) = Prim(T) ∪ Sig(S) ∪ Sig(T) = {b, $}
+Sig(R) = Sig(A) ∪ Sig(R) = {b, $}
 ```
 
 **Símbolos directrices**
@@ -146,7 +146,7 @@ SD(T → AT) = Prim(AT) = {b}
 SD(T → λ) = Sig(T) = {$}
 SD(A → baR) = Prim(baR) = {b}
 SD(R → aR) = Prim(aR) = {a}
-SD(R → λ) = Sig(R) = {b}
+SD(R → λ) = Sig(R) = {b, $}
 ```
 
 **Tabla de parsing LL(1)**
@@ -158,6 +158,6 @@ SD(R → λ) = Sig(R) = {b}
 |`S`||`S → AT`||
 |`T`||`T → AT`|`T → λ`|
 |`A`||`A → baR`||
-|`R`|`R → aR`|`R → λ`||
+|`R`|`R → aR`|`R → λ`|`R → λ`|
 
 </div>
