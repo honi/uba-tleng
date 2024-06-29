@@ -100,5 +100,5 @@ SD(A → λ) = Sig(A) = {a}
 | Pila | Entrada | Producción |
 |-|-|-|
 |`S$`|`abaa$`|`S → aAaa`|
-|~~`a`~~`Aaa$`|~~`a`~~`baa$`|`A → b`|
+|~~`a`~~ `Aaa$`|~~`a`~~ `baa$`|`A → b`|
 |~~`baa$`~~|~~`baa$`~~||
