@@ -117,6 +117,7 @@ Ahora se puede ver más claramente que la gramática genera `(ba+)+`, o equivale
 
 ```
 T ⇒* λ
+R ⇒* λ
 ```
 
 **Primeros**
