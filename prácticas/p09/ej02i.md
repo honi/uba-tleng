@@ -21,7 +21,7 @@ Por ejemplo estas cadenas están en el lenguaje:
 - `f(x,f(x))`
 - `f(x,x,f(f(x,f(x,x,x,x,f(x)))))`
 
-La gramática es ambigua en las producciones de `L` (la lista de argumentos). Al consumir el símbolo `x` no sabemos si es el último argumento o si hay más. Modifiquemos las producciones de `L` para consumir `x` en una única producción y luego ver si hay más argumentos o no desde un nuevo no terminal `T`.
+La gramática es ambigua en las producciones de `L` (la lista de argumentos). Al consumir el símbolo `x` no sabemos si es el último argumento o si hay más. Modifiquemos las producciones de `L` para consumir `x` en una única producción y luego ver si hay más argumentos o no desde un nuevo no terminal `T` (factorización a izquierda).
 
 ```
 G9 = ⟨{S,A,L,T}, {(,),,,f,x}, P9, S⟩
