@@ -45,7 +45,7 @@ La gramática no es LL(1) pues hay símbolos directrices que no son disjuntos, e
 
 La gramática genera el lenguaje `(ba+)+`. Las producciones de `S` hacen recursión a izquierda y generan una lista de `Aa`. Luego, las producciones de `A` también hacen recursión a izquierda y generan una lista de `a`, terminando con una `b` a la cabeza.
 
-Podríamos directamente reescribir la gramática entera, pero intentemos eliminar la recursión a izquierda para ver si con eso se puede transformar la gramática original y por lo tanto tenemos la garantía de que se preserva el lenguaje original.
+Podríamos directamente reescribir la gramática entera, pero intentemos eliminar la recursión a izquierda para ver si con esos cambios evitamos los conflictos. De esta forma tenemos la garantía de que se preserve el lenguaje original.
 
 ```
 G10 = ⟨{S,A}, {a,b}, P10, S⟩
@@ -99,7 +99,7 @@ La gramática no es LL(1) pues hay símbolos directrices que no son disjuntos, e
 
 El problema que tenemos es cuando vemos una `a` desde las producciones de `R`. No sabemos si después vienen más `a`. `R` captura todas las `a` después de una `b` **excepto** la última `a`, que es generada por `S → AaT` y `T → AaT`.
 
-Podemos sacar la `a` de las producciones de `S` y `T` para generarla con `A` junto a la `b`. Es indistinto cuándo ponemos las `a` ya que son indistinguibles entre sí. De esta forma, `R` genera `a*` y no hay conflictos en los SD, pues después de generar las `a` con las producciones de `R`, o bien termina la cadena, o bien viene una `b`.
+Podemos sacar la `a` de las producciones de `S` y `T` para generarla desde `A` junto a la `b`. Es indistinto cuándo ponemos las `a` ya que son indistinguibles entre sí. De esta forma, `R` genera `a*` y no hay conflictos en los SD, pues después de generar las `a` con las producciones de `R`, o bien termina la cadena, o bien viene una `b`.
 
 ```
 G10 = ⟨{S,A}, {a,b}, P10, S⟩

@@ -83,11 +83,11 @@ La gramática no es LL(1) pues hay símbolos directrices que no son disjuntos, e
 
 ## Tercer intento
 
-Observemos que la gramática genera corchetes balanceados. Pero la producción no es leftmost ("a izquierda").
+Observemos que la gramática genera corchetes balanceados. Pero la producción no es siempre "leftmost derivation" (derivación a izquierda).
 
-Llamemos un nivel de corchetes a todos los corchetes hijos del mismo corchete padre (los corchetes de nivel 0 no tienen padre). En un mismo nivel de corchetes la gramática permite generarlos en cualquier orden arbitrario: desde el centro de la cadena hacia la izquierda y/o derecha, de izquierda a derecha, de derecha a izquierda, etc.
+Llamemos un nivel de corchetes a todos los corchetes hijos del mismo corchete padre (los corchetes de nivel 0 no tienen padre). En un mismo nivel de corchetes la gramática permite generarlos en cualquier orden arbitrario: desde el centro de la cadena hacia la izquierda y/o derecha, de izquierda a derecha, de derecha a izquierda, etc. Luego cada par de corchetes pueden opcionalmente contener más niveles en su interior.
 
-Podemos reescribir la gramática y forzar una derivación siempre a izquierda. Se mantiene el mismo lenguaje pero sin ambigüedad.
+Podemos reescribir la gramática y forzar una derivación siempre a izquierda. De esta forma se mantiene el mismo lenguaje pero sin ambigüedad.
 
 ```
 G5 = ⟨{A}, {[,]}, P5, A⟩

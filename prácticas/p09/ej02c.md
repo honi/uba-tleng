@@ -99,7 +99,7 @@ SD(B → bB) = Prim(bB) = {b}
 SD(B → b) = Prim(b) = {b}
 ```
 
-La gramática aún no es LL(1) pues hay símbolos directrices que no son disjuntos, en particular `SD(A → aA) ∩ SD(A → a) = {a} ≠ Ø` y `SD(B → bB) ∩ SD(B → b) = {b} ≠ Ø`. Arreglamos un problema pero generamos otro, ahora hay ambigüedad en las producciones de `A` y `B`.
+La gramática aún no es LL(1) pues hay símbolos directrices que no son disjuntos, en particular `SD(A → aA) ∩ SD(A → a) = {a} ≠ Ø` y `SD(B → bB) ∩ SD(B → b) = {b} ≠ Ø`. Arreglamos un problema pero generamos otro, ahora hay conflictos en las producciones de `A` y `B`.
 
 ## Tercer intento
 
@@ -116,7 +116,7 @@ A → aA | λ
 B → bB | λ
 ```
 
-Ya sabemos que el lenguaje es `a*|b*`, o equivalentemente, `aa*|bb*|λ`. Al agregar la producción `S → λ` permitimos generar la cadena vacía desde `S` de forma no ambigua. Ya que si usamos las otras producciones, forzamos empezar la cadena con una `a` o `b`. Y luego se pueden producir todas las `a` o `b` como uno quiera con las producciones de `A` o `B`.
+Ya sabemos que el lenguaje es `a*|b*`, o equivalentemente, `aa*|bb*|λ`. Al agregar la producción `S → λ` permitimos generar la cadena vacía directamente desde `S`. Ya que si usamos las otras producciones, forzamos empezar la cadena con una `a` o `b`. Y luego se pueden producir todas las `a` o `b` como uno quiera con las producciones de `A` o `B`.
 
 **Anulables**
 

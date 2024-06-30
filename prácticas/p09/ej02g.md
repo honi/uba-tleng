@@ -9,7 +9,7 @@ A → 0A1 | 01
 
 El lenguaje generado por esta gramática son las cadenas: $\{ 0^n1^n ∣ n ≥ 1 \}$.
 
-A simple vista esta gramática va a tener un problema parecido al inciso f). Cuando consumimos un `0` no vamos a saber qué producción usar ya que la gramática es ambigua. Puntualmente no podemos saber si es el último `0` o no.
+A simple vista esta gramática va a tener un problema parecido al inciso f). Cuando consumimos un `0` no vamos a saber qué producción usar. Puntualmente no podemos saber si es el último `0` o no.
 
 Podemos desambiguar la gramática forzando el primer `01` en la producción de `A` y luego agregar un nuevo no terminal `B` para generar el resto de los `01`s (puede no haber ninguno más).
 

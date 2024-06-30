@@ -36,7 +36,7 @@ La gramática no es LL(1) pues hay símbolos directrices que no son disjuntos, e
 
 ## Segundo intento
 
-El lenguaje generado es `a+`. La amigüedad es que al consumir una `a` no sabemos si es la última o no. Cambiemos la gramática para que sea más parecido a reconocer `aa*`, es decir, forzamos consumir la primer `a` y luego, con otra producción, consumir el resto de las `a`.
+El lenguaje generado es `a+`. El conflicto es que al consumir una `a` no sabemos si es la última o no. Cambiemos la gramática para que sea más parecido a reconocer `aa*`, es decir, forzamos consumir la primer `a` y luego, con otra producción, consumir el resto de las `a`.
 
 ```
 G6 = ⟨{S,T}, {a}, P6, S⟩
