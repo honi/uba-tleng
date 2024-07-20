@@ -1,0 +1,17 @@
+digraph {
+	dpi=300
+    rankdir=LR
+    outputorder="edgesfirst"
+	node [width=0.7]
+	node [shape=doublecircle]; q
+	node [shape=circle, style=filled, fillcolor="#FFFFFF"]
+
+    p_[label="p'"]
+    r_[label="r'"]
+
+	p -> p_ [label="α1'", style="dotted"]
+	p_ -> t [label="a"]
+    r -> r_ [label="α1'", style="dotted"]
+	r_ -> t [label="a"]
+    t -> q  [label="α2", style="dotted"]
+}
