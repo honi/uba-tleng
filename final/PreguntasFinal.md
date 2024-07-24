@@ -201,3 +201,13 @@ Ahora tenemos que arreglar algunas cosas para que acepte el mismo lenguaje. Por 
 Sean $p_0, \dots, p_n$ los estados dentro del ciclo tales que $\hat\delta(p_i, y) = p_{i+1}$. En particular $p_0 = q_{l_j}$ y $p_n = q_{l_k}$. Podríamos agregar transiciones $\lambda$ hacia $q_{l_k}$ desde cada uno de los $p_i$, es decir $\hat\delta(p_i, \lambda) = q_{l_k}$. Esto construye un AFND-$\lambda$, pero se puede construir un AFD de la siguiente forma.
 
 Extendemos el autómata para conectar cada $p_i$ con todos los posibles caminos de aceptación desde $q_{l_k}$. Agregamos estados y transiciones necesarias tal que para todo $\alpha \in \Sigma^\ast$, $\hat\delta(q_{l_k}, \alpha) \in F$ sii $\hat\delta(p_i, \alpha) \in F$. Notar que podría ser $\alpha = z$ pero también podrían ser otras cadenas.
+
+**Otra idea**: Si el autómata resultante puede ser AFND-$\lambda$, entonces se pueden partir todos los estados en 2 con una transición $\lambda$ que los une.
+
+Sea $M = \langle Q, \Sigma, \delta, q_0, F \rangle$ AFD mínimo, y sea $M' = \langle Q', \Sigma, \delta', q_0', F' \rangle$ tal que $|Q'| \geq 2|Q|$.
+
+Para todo $q \in Q$ agregamos $q_{in}, q_{out} \in Q'$ en el nuevo autómata y actualizamos las transiciones de todos los $q \in Q$ para que llegan a $q_{in}$ y salgan de $q_{out}$. Para todo $q,p \in Q$, $\delta(p, a) = q$ sii $\delta(p_{out}, a) = q_{in}$.
+
+Luego conectamos $q_{in}$ y $q_{out}$ con una transición $\lambda$. Para todo $q_{in} \in Q'$, $\delta(q_{in}, \lambda) = q_{out}$.
+
+Finalmente definimos $q_0' = q_{0_{in}}$ y $F' = \{ q_{in} \mid q \in F \}$.
