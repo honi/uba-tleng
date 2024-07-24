@@ -1,0 +1,9 @@
+digraph {
+    dpi=300
+    rankdir=LR
+    outputorder="edgesfirst"
+    node [width=0.7]
+    node [shape=doublecircle]; q0 q1
+    node [shape=circle, style=filled, fillcolor="#FFFFFF"]
+    q0 -> q1 [label="a"]
+}

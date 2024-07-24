@@ -170,4 +170,34 @@ Sea $\alpha_1 = \alpha_1'a$ con $a \in \Sigma$. Sean $p', r' \in Q$.
 $\hat\delta(p, \alpha_1) = t \hspace{1em} \Rightarrow \hspace{1em} \hat\delta(p, \alpha_1'a) = t \hspace{1em} \Rightarrow \hspace{1em} (p, \alpha_1'a) \vdash^\ast (p', a) \vdash (t, \lambda) \hspace{1em} \Rightarrow \hspace{1em} \delta(p', a) = t$ \
 $\hat\delta(r, \alpha_1) = t \hspace{1em} \Rightarrow \hspace{1em} \hat\delta(r, \alpha_1'a) = t \hspace{1em} \Rightarrow \hspace{1em} (r, \alpha_1'a) \vdash^\ast (r', a) \vdash (t, \lambda) \hspace{1em} \Rightarrow \hspace{1em} \delta(r', a) = t$
 
-<img src="./assets/ej07.png" width="420" />
+<img src="./assets/ej07a.png" width="420" />
+
+**Demostrar que la recíproca de la afirmación anterior no siempre es cierta.**
+
+El autómata $M$ tal que $\mathcal{L}(M) = \{ \lambda, a \}$ tiene 2 estados finales. Por lo tanto no es codeterminístico, sin embargo es mínimo.
+
+<img src="./assets/ej07b.png" width="200" />
+
+## Ejercicio 8
+
+**Dar un algoritmo que dado un autómata finito que reconoce un lenguaje infinito, lo transforma en otro que reconoce el mismo lenguaje y tiene al menos el doble de estados que el mínimo. Demostrar que el algoritmo es correcto.**
+
+Sea $M = \langle Q, \Sigma, \delta, q_0, F \rangle$ tal que $\mathcal{L}(M)$ es infinito. Construimos $M' = \langle Q', \Sigma, \delta', q_0', F' \rangle$ AFD mínimo tal que $\mathcal{L}(M') = \mathcal{L}(M)$.
+
+Para simplificar los chirimbolos consideramos $M = \langle Q, \Sigma, \delta, q_0, F \rangle$ como el AFD mínimo.
+
+Por Lema de Pumping, como $\mathcal{L}(M)$ es infinito entonces existe una cadena $w \in \Sigma^\ast$ tal que $w \in \mathcal{L}(M)$ y $n \leq |w| < 2n$ con $n = |Q|$ (cantidad de estados del AFD mínimo).
+
+Sea $w = a_1 \dots a_m$ con $m \geq n$. Para aceptar $w$ necesariamente usamos $m$ transiciones y pasamos por $m+1 > n$ estados. Por lo tanto hay un estado por el cual pasamos al menos 2 veces ya que hay solo $n$ estados.
+
+Sea $q_{l_0}, \dots, q_{l_m}$ con $q_{l_0} = q_0$ y $q_{l_m} \in F$ la sucesión de estados desde $q_0$ para aceptar la cadena $w$. Como hay un estado por el cual pasamos al menos 2 veces, existen $0 \leq j < k \leq n$ mínimos tal que $q_{l_j} = q_{l_k}$. Hay solo $n$ estados, entonces a lo sumo visitamos cada estado 1 vez antes de repetir algún estado ya visitado. Al tomar $j,k$ mínimos, el máximo valor posible de $k$ es $n$. En esencia estamos localizando el ciclo más cercano a $q_0$.
+
+El camino que acepta $w$ tiene 3 partes claramente delimitadas: antes del ciclo, el ciclo, después del ciclo. Esto genera una descomposición de $w$ (es la misma que la del Lema de Pumping): $w = xyz$ con $x = a_1 \dots a_j$, $y = a_{j+1} \dots a_k$, $z = a_{k+1}, \dots, a_m$.
+
+Para agregar $n$ estados nuevos y mantener el mismo lenguaje, podemos "[unrollear](https://en.wikipedia.org/wiki/Loop_unrolling)" el ciclo tantas veces como sea necesario. La idea es agrandar el ciclo que acepta $y$ para que acepte $y^n$. Como mínimo el ciclo tiene un único estado ($|y| = 1$), así que $y^n$ en efecto agrega por lo menos $n$ estados al autómata.
+
+Ahora tenemos que arreglar algunas cosas para que acepte el mismo lenguaje. Por Lema de Pumping ya sabíamos que $w = xy^iz \in \mathcal{L}(M')$ con $i \geq 0$. Al agrandar el ciclo solo tenemos garantizado que $xy^iz \in \mathcal{L}(M')$ con $i \equiv 0$ módulo $n$. Necesitamos poder salir del ciclo a mitad de camino, en particular cada vez que aceptamos un $y$.
+
+Sean $p_0, \dots, p_n$ los estados dentro del ciclo tales que $\hat\delta(p_i, y) = p_{i+1}$. En particular $p_0 = q_{l_j}$ y $p_n = q_{l_k}$. Podríamos agregar transiciones $\lambda$ hacia $q_{l_k}$ desde cada uno de los $p_i$, es decir $\hat\delta(p_i, \lambda) = q_{l_k}$. Esto construye un AFND-$\lambda$, pero se puede construir un AFD de la siguiente forma.
+
+Extendemos el autómata para conectar cada $p_i$ con todos los posibles caminos de aceptación desde $q_{l_k}$. Agregamos estados y transiciones necesarias tal que para todo $\alpha \in \Sigma^\ast$, $\hat\delta(q_{l_k}, \alpha) \in F$ sii $\hat\delta(p_i, \alpha) \in F$. Notar que podría ser $\alpha = z$ pero también podrían ser otras cadenas.
